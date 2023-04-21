@@ -1,0 +1,21 @@
+{
+  "name": "testtjhelpers",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build-css": "npx tailwindcss -i assets/src/input.css -o assets/css/style.css --watch",
+    "build-js": "npx esbuild assets/src/script.js --outfile=assets/js/script.js --bundle --watch",
+    "build-second-js": "npx esbuild assets/src/secondscript.js --outfile=assets/js/secondscript.js --bundle --watch"
+
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "tailwindcss": "^3.3.1"
+  },
+  "dependencies": {
+    "alpinejs": "^3.12.0",
+    "esbuild": "^0.17.16"
+  }
+}

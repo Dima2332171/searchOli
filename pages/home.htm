@@ -1,0 +1,68 @@
+title = "Oli Home Page"
+url = "/"
+layout = "default"
+==
+
+
+<main class="container mx-auto" x-data="{
+    search:'',
+    items: [
+    {
+        title:'Oil painting',
+        img: 'assets/images/1.JPG',
+    },
+    {
+        title:'Watercolor',
+        img: 'assets/images/2.JPG',
+    },
+    {
+        title:'Glass painting',
+        img: 'assets/images/3.JPG',
+    },
+    {
+        title:'Decoupage',
+        img: 'assets/images/4.JPG',
+    },
+    {
+        title:'Mosaic',
+        img: 'assets/images/5.JPG',
+    },
+    {
+        title:'Sketching',
+        img: 'assets/images/6.JPG',
+    },
+    {
+        title:'Coffee grisaille',
+        img: 'assets/images/7.JPG'
+     }
+    ],
+    myForData: this.items,
+    get filteredItems() {
+        return this.items.filter(
+            item => item.title.toLowerCase().includes(this.search.toLowerCase())
+        )
+    }
+}">
+    <div>
+        <div class="text-center">
+            <h1>Search Panel</h1>
+            <input type="text" class="w-1/2 h-10 p-2 rounded-full" x-model="search">
+        </div>
+
+        <div class="text-black">
+            <template x-for="item in filteredItems">
+                <div class="flex bg-colorGrey my-4 mx-4 py-3 px-3 border-solid border-gray-300 border-2 rounded-lg">
+                    <div class="pt-base">
+                        <img class="h-36 w-64 rounded-full" :src="{{ 'assets/images/1.JPG'|theme }}" alt="">
+                    </div>
+                    <div class="pt-base px-4">
+                        <h2 class="text-4xl first-letter:text-5xl first-letter:font-medium" x-text="item.title" ></h2>
+                        <p class="py-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium asperiores blanditiis, commodi dicta fuga illum in minus nobis officiis quod recusandae, repellat rerum tenetur voluptatem voluptatum? A ab molestias optio.</p>
+                        <a href="" class="bg-red-600 py-2 px-8 mb-1.5 rounded-full text-white hover:bg-red-700">Join to Us</a>
+                    </div>
+                </div>
+            </template>
+        </div>
+    </div>
+</main>
+<hr>

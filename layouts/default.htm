@@ -1,0 +1,16 @@
+description = "Default layout"
+==
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% partial 'site/meta' %}
+</head>
+<body class="dark:bg-darkTheme dark:text-colorDark bg-lightTheme text-2xl">
+
+    {% partial 'site/header' %}
+    {% page %}
+    {% partial 'site/footer' %}
+
+</body>
+</html>
+
